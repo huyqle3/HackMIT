@@ -20,7 +20,10 @@ public class LoginPage extends Activity{
 		
 		//Is current user an anonymous user or not?
 		if (ParseAnonymousUtils.isLinked(ParseUser.getCurrentUser())){
-			
+			// If user is anonymous, make them sign up at the LoginSignup.class
+			Intent intent = new Intent(LoginPage.this, LoginSignup.class);
+			startActivity(intent);
+			finish();
 		}else{
 			// If current user is not an anonymous user
 			ParseUser currentUser = ParseUser.getCurrentUser();
@@ -34,5 +37,4 @@ public class LoginPage extends Activity{
 			}
 		}
 	}
-
 }
