@@ -16,8 +16,6 @@ public class LoginPage extends Activity{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.login_page);
 		
-		Parse.initialize(this, "ZF3tzb2RBU4J5PYLlVxgnlMGHa3SWkRAoI6Y2OAN", "34XmgZk4QgkOPqdStKzn3tNHQyNWoW5AeeEighYP");
-		
 		//Is current user an anonymous user or not?
 		if (ParseAnonymousUtils.isLinked(ParseUser.getCurrentUser())){
 			// If user is anonymous, make them sign up at the LoginSignup.class
@@ -33,7 +31,10 @@ public class LoginPage extends Activity{
 				startActivity(intent);
 				finish();
 			}else{
-				
+				// Send user to sign up page at LoginSignup.class
+				Intent intent = new Intent(LoginPage.this, LoginSignup.class);
+				startActivity(intent);
+				finish();
 			}
 		}
 	}
