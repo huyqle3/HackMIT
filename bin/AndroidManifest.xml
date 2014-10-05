@@ -29,6 +29,10 @@
             android:name="com.example.hackmit.LoginSignup"
             android:label="@string/app_name" >
         </activity>
+        <activity
+            android:name="com.example.hackmit.HomeActivity"
+            android:label="@string/app_name" >
+        </activity>
     </application>
 
 </manifest>

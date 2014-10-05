@@ -14,6 +14,7 @@ public class ParseApplication extends Application{
 		
 		// Initialization code
 		Parse.initialize(this, "ZF3tzb2RBU4J5PYLlVxgnlMGHa3SWkRAoI6Y2OAN", "34XmgZk4QgkOPqdStKzn3tNHQyNWoW5AeeEighYP");
+		ParseUser.enableAutomaticUser();
 		ParseACL defaultACL = new ParseACL();
 		
 		// If you would like all objects to be private by default, remove this line

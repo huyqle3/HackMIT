@@ -10,13 +10,14 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.parse.LogInCallback;
+import com.parse.Parse;
 import com.parse.ParseException;
 import com.parse.ParseUser;
 import com.parse.SignUpCallback;
 
 public class LoginSignup extends Activity{
 	// Declaration of variables
-	Button loginbutton;
+	Button login;
 	Button signup;
 	String usernametxt;
 	String passwordtxt;
@@ -26,16 +27,17 @@ public class LoginSignup extends Activity{
 	public void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.login_signup);
+		
 		// Find the EditTexts in login_signup.xml
 		username = (EditText) findViewById(R.id.username);
 		password = (EditText) findViewById(R.id.password);
 		
 		// Find the buttons in login_signup
-		loginbutton = (Button) findViewById(R.id.login);
+		login = (Button) findViewById(R.id.login);
 		signup = (Button) findViewById(R.id.signup);
 		
 		// Login Button Click Listener
-		loginbutton.setOnClickListener(new OnClickListener(){
+		login.setOnClickListener(new OnClickListener(){
 		
 			public void onClick(View arg0) {
 	            // Retrieve the text entered from the EditText

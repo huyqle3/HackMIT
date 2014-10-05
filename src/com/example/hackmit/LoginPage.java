@@ -5,24 +5,22 @@ import android.os.Bundle;
 import android.content.Intent;
 
 import com.parse.Parse;
-import com.parse.ParseAnalytics;
 import com.parse.ParseAnonymousUtils;
-import com.parse.ParseObject;
 import com.parse.ParseUser;
 
 public class LoginPage extends Activity{
-	@Override
+	
 	public void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.login_page);
-		
+		Parse.initialize(this, "ZF3tzb2RBU4J5PYLlVxgnlMGHa3SWkRAoI6Y2OAN", "34XmgZk4QgkOPqdStKzn3tNHQyNWoW5AeeEighYP");
 		//Is current user an anonymous user or not?
-		if (ParseAnonymousUtils.isLinked(ParseUser.getCurrentUser())){
+		/*if (ParseAnonymousUtils.isLinked(ParseUser.getCurrentUser())){
 			// If user is anonymous, make them sign up at the LoginSignup.class
 			Intent intent = new Intent(LoginPage.this, LoginSignup.class);
 			startActivity(intent);
 			finish();
-		}else{
+		}else{*/
 			// If current user is not an anonymous user
 			ParseUser currentUser = ParseUser.getCurrentUser();
 			if (currentUser != null){
@@ -36,6 +34,6 @@ public class LoginPage extends Activity{
 				startActivity(intent);
 				finish();
 			}
-		}
+		//}
 	}
 }
